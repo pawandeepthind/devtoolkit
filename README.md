@@ -23,6 +23,10 @@ It is good to read about Vagrant and Ansible.
       $ vagrant plugin install vagrant-vbguest
       $ vagrant plugin install vagrant-hostmanager
     ```
+  * After installation of the plugins do 
+    ```
+      $ vagrant up
+    ```
   * Note: 
     * Machine is setup with software using [ansible](https://www.ansible.com/) that is installed on manager.
     * Machine names,port forwarding and memory can be configured using config.xml
