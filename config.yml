@@ -1,12 +1,12 @@
 ---
 groups:
-  - group_name: dev_group
+  - group_name: dev_group 
     servers:
       - name: dev
-        type: slave
+        type: master
         box: geerlingguy/centos7
         memory: 6144
-        ip: 10.0.20.20
+        ip: 10.0.20.10
         synced_folders: 
           - { guest: "./server", host: "/home/vagrant/server" }
         forwarded_ports:
@@ -14,14 +14,4 @@ groups:
           - { guest: 9080, host: 9080 } # websphere http port
           - { guest: 9443, host: 9443 } # websphere https port
           - { guest: 1414, host: 1414 } # websphere mq port
-  - group_name: management_server 
-    servers:
-      - name: manager
-        type: master
-        box: geerlingguy/centos7
-        memory: 256
-        ip: 10.0.20.10
-        synced_folders: 
-          - { guest: "./server", host: "/home/vagrant/server" }
-        forwarded_ports:
 

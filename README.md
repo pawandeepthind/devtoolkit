@@ -1,8 +1,7 @@
 # What
 
-Dev machine for IBM CoC Integrated DevToolKit. This create CentOS 7 with pre-requisite software. System consist of two machines
-  
-  * __manager__ - machine that will help in installing all the pre-requisites and commands.
+Dev machine for IBM CoC Integrated DevToolKit. This create CentOS 7 with pre-requisite software.
+
   * __dev__     - machine that will host the actual toolkit.
 
 # How
@@ -28,19 +27,19 @@ It is good to read about Vagrant and Ansible.
       $ vagrant up
     ```
   * Note: 
-    * Machine is setup with software using [ansible](https://www.ansible.com/) that is installed on manager.
+    * Machine is setup with software using [ansible](https://www.ansible.com/).
     * Machine names,port forwarding and memory can be configured using config.xml
 
 ## SSH into machine
 
-  Once machines are up, user can cd to the directory where the repository code is checked out and try vagrant ssh {machinename} i.e. vagrant ssh dev/manager
+  Once machines are up, user can ssh into the machine using
   ```
     $ vagrant ssh dev
   ```
 
 ## Coming Soon
 
-  * Commands to enable 
+  * Ansible playbook for usual setup 
     * Setup of downloaded devtoolkit_docker.tar
     * Setup for extension deployment
     * Setup for building the customization

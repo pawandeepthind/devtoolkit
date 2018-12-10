@@ -70,7 +70,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         srv_config.vm.box = server['box']
         srv_config.vm.hostname = server['name']
 
-        # Forward oracle port
+        # Forward port
         srv_config.vm.network :private_network, ip: server['ip']
 
         server['forwarded_ports']&.each do |port|
