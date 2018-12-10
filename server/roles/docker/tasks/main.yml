@@ -1,0 +1,35 @@
+---
+- name: Download Docker CE
+  shell: "curl -fsSL https://get.docker.com -o get-docker.sh"
+  args:
+    warn: false
+
+- name: Run get-docker.sh Script
+  become: yes
+  shell: "sh get-docker.sh"
+
+- name: Enable running docker as non-root user
+  become: yes
+  shell: "usermod -aG docker vagrant"
+
+- name: Install Docker 
+  become: yes
+  shell: "yum install docker-ce"
+  args:
+    warn: false
+
+- name: Run docker service 
+  become: yes
+  shell: "systemctl start docker"
+
+- name: Install Docker Compose 
+  become: yes
+  shell: 'curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose'
+  args:
+    warn: false
+    
+- name: Make Docker Compose Executable
+  become: yes
+  shell:  "chmod +x /usr/local/bin/docker-compose"
+  args:
+    warn: false

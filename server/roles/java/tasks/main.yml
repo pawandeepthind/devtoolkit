@@ -1,0 +1,11 @@
+---
+- import_tasks: validate.yml
+  when: not is_java_installed
+  
+- debug: msg="Java Installed:- {{ is_java_installed }}"
+
+- import_tasks: prepare.yml
+  when: not is_java_installed
+
+- import_tasks: install.yml
+  when: not is_java_installed
