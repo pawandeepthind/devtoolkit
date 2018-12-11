@@ -32,9 +32,10 @@ It is good to read about Vagrant and Ansible.
 
 ## Setup devtoolkit
 
-  If it is desired to setup the Docker-based integrated developer toolkit along with the VM creation,
-    * Use IBM UrbanCode Deploy Selfserv tool to download the IBM OMS Integrated Development Toolkit
-    * Download the devtoolkit_docker.tar to {PWD}/server/roles/files directory.
+  If it is desired to extract the Docker-based integrated developer toolkit along with the VM creation,
+
+  * Use IBM UrbanCode Deploy Selfserv tool to download the IBM OMS Integrated Development Toolkit
+  * Download the devtoolkit_docker.tar to {PWD}/server/roles/files directory.
 
 ## SSH into machine
 
