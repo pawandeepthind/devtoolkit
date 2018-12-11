@@ -1,6 +1,7 @@
 ---
 - name: Install | Common Utilities
   package: name={{item}} state=present
+  become: yes
   with_items:
     - nano
     - unzip
