@@ -1,0 +1,35 @@
+---
+- name: Validate devtoolkit_docker.tar present in server/roles/files
+  stat:
+    path: /home/vagrant/server/roles/files/devtoolkit_docker.tar
+  register: stat_result
+
+- debug:
+    msg: "devtoolkit_docker.tar exist. Proceed with intial setup"
+  when: stat_result.stat.exists
+
+- debug:
+    msg: "devtoolkit_docker.tar does not exist. Skip further steps"
+  when: stat_result.stat.exists == False
+
+- name: Copy devtoolkit_docker.tar to home directory
+  command: cp /home/vagrant/server/roles/files/devtoolkit_docker.tar /home/vagrant/.
+  when: stat_result.stat.exists
+
+- name: Extract and change permission for om_compose files
+  command: tar -xf devtoolkit_docker.tar
+  args:
+    chdir: /home/vagrant
+    warn: False
+  when: stat_result.stat.exists
+
+- name: Make devtoolkit_docker/compose files executable
+  command: chmod +x om-compose.sh
+  args:
+    chdir: /home/vagrant/devtoolkit_docker/compose
+    warn: False
+  when: stat_result.stat.exists
+
+- debug: 
+    msg: "For further setup ssh to the vm, change directory to /home/vagrant/devtoolkit_docker/compose and then execute ./om_compose.sh setup"
+  when: stat_result.stat.exists

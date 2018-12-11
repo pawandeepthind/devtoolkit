@@ -30,6 +30,12 @@ It is good to read about Vagrant and Ansible.
     * Machine is setup with software using [ansible](https://www.ansible.com/).
     * Machine names,port forwarding and memory can be configured using config.xml
 
+## Setup devtoolkit
+
+  If it is desired to setup the Docker-based integrated developer toolkit along with the VM creation,
+    * Use IBM UrbanCode Deploy Selfserv tool to download the IBM OMS Integrated Development Toolkit
+    * Download the devtoolkit_docker.tar to {PWD}/server/roles/files directory.
+
 ## SSH into machine
 
   Once machines are up, user can ssh into the machine using
@@ -39,8 +45,7 @@ It is good to read about Vagrant and Ansible.
 
 ## Coming Soon
 
-  * Ansible playbook for usual setup 
-    * Setup of downloaded devtoolkit_docker.tar
+  * Ansible playbook for usual operations like 
     * Setup for extension deployment
     * Setup for building the customization
     * Setup for CDT build
