@@ -14,6 +14,7 @@
 
 - name: Copy devtoolkit_docker.tar to home directory
   command: cp /home/vagrant/server/roles/files/devtoolkit_docker.tar /home/vagrant/.
+  become_user: vagrant
   when: stat_result.stat.exists
 
 - name: Extract and change permission for om_compose files
@@ -21,6 +22,7 @@
   args:
     chdir: /home/vagrant
     warn: False
+  become_user: vagrant
   when: stat_result.stat.exists
 
 - name: Make devtoolkit_docker/compose files executable
@@ -28,6 +30,7 @@
   args:
     chdir: /home/vagrant/devtoolkit_docker/compose
     warn: False
+  become_user: vagrant
   when: stat_result.stat.exists
 
 - debug: 
