@@ -28,7 +28,7 @@ It is good to read about Vagrant and Ansible.
     ```
   * Note: 
     * Machine is setup with software using [ansible](https://www.ansible.com/).
-    * Machine names,port forwarding and memory can be configured using config.xml
+    * Machine name,forwarded ports, ip address, shared mounted folders and memory can be configured using config.xml
 
 ## Setup devtoolkit
 
